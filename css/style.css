@@ -197,7 +197,7 @@ section {
 .home {
     margin-top: 2rem;
     height: 75vh;
-    background: url("img/1684516740766.png") no-repeat;
+    background: url("../img/1684516740766.png") no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -744,7 +744,7 @@ section.about {
 
 
 .contact a{
-    color: var(--text-color);
+    color: white;
 }
 
 .contact a:hover{
