@@ -21,8 +21,15 @@ body {
     color: var(--text-color);
 }
 
+@media screen and (max-width: 786px) {
+
+    body {
+        padding: auto;
+    }
+}
+
 header {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     right: 0;
@@ -30,9 +37,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
-    /* background-color:var(--nav1-color); */
+    padding: 2rem 1rem;
     transition: all .50s ease;
+}
+
+@media screen and (max-width: 786px) {
+
+    header .header {
+        position: fixed;
+        padding: 1rem 1rem 1rem 1rem;
+        max-width: 100%;
+    }
 }
 
 /* Estilo logo */
@@ -171,17 +186,30 @@ section {
     padding: 160px 15% 120px;
 }
 
+@media screen and (max-width:786) {
+    section .home {
+        padding: 20%;
+    }
+}
+
 /* Home */
 
 .home {
+    margin-top: 2rem;
     height: 75vh;
-    background: url('/img/1684516740766.png') no-repeat;
+    background: url("img/1684516740766.png") no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     padding: 27% 10%;
     justify-content: flex-start;
+}
+
+@media  screen and (max-width:786px) {    
+    .home{
+        background: none;
+    }
 }
 
 .home-content {
@@ -333,7 +361,7 @@ section {
 
 .home-sci {
     position: absolute;
-    margin-top: 40rem;
+    margin-top: 35rem;
     width: 170px;
     display: flex;
     justify-content: space-between;
@@ -395,7 +423,8 @@ section {
 
     /* Sobre mi imagen */
     .home-sci {
-        margin-top: 20%;
+        margin-top: 50rem;
+        
     }
 }
 
@@ -443,25 +472,37 @@ section {
 
 /* Sobre mi */
 
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-img {
+    max-width: 90%;
+}
+
 .about-img img {
     /* border: 2px solid blue; */
+    flex-direction: column;
     background-position: center;
     display: flex;
     align-items: center;
-    margin: -4.5rem; 
-    max-width: 530px;
-    height: auto;
-    width: 100%;
+    max-width: 100%;
     border-radius: 50%;
 }
-
+   /* Sobre mi */
+ 
 @media screen and (max-width: 786px) {
 
-    /* Sobre mi imagen */
-    .about-img img {
-        margin: 6rem;
+    .about img {
+        display: grid;
+        margin: 2rem;
+        flex-direction: column-reverse;
+        top: 30%;
     }
 }
+
 
 /* Img face*/
 
@@ -471,8 +512,8 @@ section {
     background-position: center;
     display: flex;
     align-items: center;
-    margin: -4.7rem; 
-    margin-top: -7%;
+    margin: -2.1rem; 
+    margin-top: -5%;
     max-width: 530px;
     height: 63%;
     width: 34.2%;
@@ -503,11 +544,10 @@ section {
 @media screen and (max-width: 900px) {
     .about-imgHover {
         opacity: 0;
-        visibility: hidden;
+        display: none;
     }
     
 }
-
 
 .about-text h1 {
     position: relative;
@@ -567,6 +607,8 @@ section {
     animation-delay: 4.6s;
 }
 
+
+
 /* Header sticky */
 
 header.sticky {
@@ -575,12 +617,23 @@ header.sticky {
     padding: 2rem;
 }
 
-.about {
+section.about {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     gap: 1.5rem;
 }
+
+@media screen and (max-width:786px){
+        section.about{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            align-items: center;
+            gap: 1.5rem;
+        }
+    }
+
+
 
 /* Mis habilidades */
 
@@ -595,7 +648,7 @@ header.sticky {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .main-text{
@@ -607,6 +660,12 @@ header.sticky {
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
+}
+
+@media screen and (max-width:780px) {
+    .habilities h1{
+        font-size: 40px;
+    }
 }
 
 .main-text h1::before {
@@ -629,8 +688,17 @@ header.sticky {
 .card{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 2.5rem;
+}
+
+@media screen and (max-width: 786px) {
+
+    /* Sobre mi imagen */
+    .card{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
 
 .box{
@@ -675,11 +743,24 @@ header.sticky {
 }
 
 
-.contact p{
+.contact a{
     color: var(--text-color);
 }
 
-.contact p:hover{
+.contact a:hover{
     color: var(--main-color);
     cursor: pointer;
+}
+
+@media screen and (max-width: 786px) {
+
+    /* Sobre mi imagen */
+    .contact ul{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact h1{
+        font-size: 40px;
+    }
 }
